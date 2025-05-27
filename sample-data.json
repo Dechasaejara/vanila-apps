@@ -1,0 +1,74 @@
+{
+    "user": null,
+    "preferences": {
+      "notifications": true,
+      "locationEnabled": false
+    },
+    "ideas": [
+      {
+        "id": "idea1",
+        "title": "Renovate Downtown Park Playground",
+        "description": "The current playground equipment is outdated and needs replacement. We could add new swings, a modern climbing structure, and rubberized flooring for safety.",
+        "authorId": "123456789",
+        "authorName": "Demo User",
+        "createdAt": "2023-10-26T10:00:00Z",
+        "upvotes": ["123456789", "987654321"],
+        "comments": [
+          {
+            "id": "comment1_1",
+            "userId": "987654321",
+            "userName": "Another User",
+            "text": "Great idea! I fully support this.",
+            "createdAt": "2023-10-26T11:00:00Z"
+          }
+        ],
+        "location": { "latitude": null, "longitude": null, "name": "Downtown Park Area" },
+        "tags": ["park", "children", "renovation"],
+        "status": "open"
+      }
+    ],
+    "petitions": [
+      {
+        "id": "petition1",
+        "title": "More Bicycle Lanes on Main Street",
+        "description": "Requesting the city council to install dedicated bicycle lanes on Main Street to improve cyclist safety and encourage eco-friendly transportation.",
+        "authorId": "987654321",
+        "authorName": "Another User",
+        "createdAt": "2023-10-25T14:00:00Z",
+        "targetSignatures": 500,
+        "signatures": ["987654321", "112233445"],
+        "status": "active",
+        "location": null
+      }
+    ],
+    "polls": [
+      {
+        "id": "poll1",
+        "question": "Preferred location for new community garden?",
+        "options": [
+          { "id": "opt1", "text": "North End Plot", "votes": ["123456789"] },
+          { "id": "opt2", "text": "Riverside Green", "votes": [] },
+          { "id": "opt3", "text": "Old Mill Site", "votes": ["987654321", "112233445"] }
+        ],
+        "authorId": "123456789",
+        "authorName": "Demo User",
+        "createdAt": "2023-10-24T09:00:00Z",
+        "status": "open",
+        "votedBy": ["123456789", "987654321", "112233445"]
+      }
+    ],
+    "projects": [
+       {
+        "id": "project1",
+        "ideaId": "idea1",
+        "title": "Downtown Park Playground Renovation Project",
+        "description": "Team formed to manage the renovation of the park.",
+        "team": ["123456789", "987654321"],
+        "tasks": [
+          {"id": "task1", "description": "Fundraising plan", "assignee": "123456789", "status": "pending"},
+          {"id": "task2", "description": "Design mockups", "assignee": "987654321", "status": "in-progress"}
+        ],
+        "status": "planning"
+      }
+    ]
+  }

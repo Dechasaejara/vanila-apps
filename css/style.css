@@ -1,0 +1,168 @@
+/* Telegram Theme Variables - these will be overridden by Telegram */
+:root {
+    --tg-theme-bg-color: #ffffff;
+    --tg-theme-text-color: #000000;
+    --tg-theme-hint-color: #999999;
+    --tg-theme-link-color: #2481cc;
+    --tg-theme-button-color: #2481cc;
+    --tg-theme-button-text-color: #ffffff;
+    --tg-theme-secondary-bg-color: #f1f1f1; /* For headers, navs */
+    --tg-viewport-height: 100vh; /* Fallback */
+    --tg-viewport-stable-height: 100vh; /* Fallback */
+    --tg-theme-header-bg-color: var(--tg-theme-secondary-bg-color); /* For header specific */
+    --tg-theme-section-bg-color: var(--tg-theme-bg-color); /* For content sections */
+    --tg-theme-destructive-text-color: #ff3b30;
+    --tg-theme-section-header-text-color: var(--tg-theme-hint-color);
+    --tg-theme-accent-text-color: var(--tg-theme-link-color);
+    --tg-theme-subtitle-text-color: var(--tg-theme-hint-color);
+}
+
+body {
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: contain; /* Prevents pull-to-refresh on main body */
+}
+
+/* Apply viewport height considering Telegram's dynamic adjustments */
+#app {
+    height: var(--tg-viewport-stable-height, 100vh);
+}
+#content-area {
+    /* padding-top needs to match header height, padding-bottom for nav height */
+    /* these are set inline dynamically in JS or fixed in HTML */
+}
+
+/* Skeleton Loader styles */
+.skeleton-item {
+    background-color: var(--tg-theme-hint-color);
+    opacity: 0.3;
+    border-radius: 4px;
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+/* Custom scrollbar for webkit browsers (optional, for aesthetics) */
+#content-area::-webkit-scrollbar {
+    width: 5px;
+}
+#content-area::-webkit-scrollbar-track {
+    background: var(--tg-theme-secondary-bg-color);
+}
+#content-area::-webkit-scrollbar-thumb {
+    background: var(--tg-theme-hint-color);
+    border-radius: 3px;
+}
+#content-area::-webkit-scrollbar-thumb:hover {
+    background: var(--tg-theme-link-color);
+}
+
+/* Active Nav Item */
+.nav-item.active {
+    color: var(--tg-theme-link-color);
+}
+.nav-item:not(.active) {
+    color: var(--tg-theme-hint-color);
+}
+
+/* Tailwind class helpers for Telegram theme */
+.bg-tg-bg { background-color: var(--tg-theme-bg-color); }
+.text-tg-text { color: var(--tg-theme-text-color); }
+.text-tg-hint { color: var(--tg-theme-hint-color); }
+.text-tg-link { color: var(--tg-theme-link-color); }
+.bg-tg-button { background-color: var(--tg-theme-button-color); }
+.text-tg-button-text { color: var(--tg-theme-button-text-color); }
+.bg-tg-secondary-bg { background-color: var(--tg-theme-secondary-bg-color); }
+.border-tg-hint { border-color: var(--tg-theme-hint-color); } /* Example for borders */
+
+
+/* Basic input styling to match Telegram */
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--tg-theme-hint-color);
+    background-color: var(--tg-theme-bg-color); /* Or sometimes secondary for emphasis */
+    color: var(--tg-theme-text-color);
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+.form-input:focus {
+    outline: none;
+    border-color: var(--tg-theme-link-color);
+    box-shadow: 0 0 0 2px var(--tg-theme-link-color);
+}
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--tg-theme-text-color);
+}
+
+.button-primary {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+}
+.button-primary:hover {
+    opacity: 0.9;
+}
+.button-secondary {
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-link-color); /* Or button-text-color if contrast is better */
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--tg-theme-button-color); /* Or hint-color */
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+}
+.button-secondary:hover {
+    opacity: 0.9;
+}
+
+.card {
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--tg-theme-text-color);
+    margin-bottom: 8px;
+}
+.card-description {
+    font-size: 0.9rem;
+    color: var(--tg-theme-hint-color);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+.card-meta {
+    font-size: 0.8rem;
+    color: var(--tg-theme-hint-color);
+}
